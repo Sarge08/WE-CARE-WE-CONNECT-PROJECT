@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Designined by Soumya Ranjan Swain -->
+<html lang="en" dir="ltr">
+  <head>
+      <script>
+          function validate(){
+              if( document.med.t2.value == "" ||
+        isNaN( document.med.t2.value) ||
+        document.med.t2.value.length != 10 )
+        {
+        alert( "Mobile No format is incorrect." );
+        document.med.t2.focus() ;
+
+        return false;
+        }
+          }
+          </script>
+    <meta charset="UTF-8">
+    <title> Book Medicine  |we care we connect </title>
+    <link rel="stylesheet" href="style4.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+  <div class="container">
+    <div class="title">Book Medicine</div>
+    <div class="content">
+      <form name="med" action="Book_medicine" method="post" onsubmit="return validate();">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="t1" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="t2" placeholder="Enter your Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Home/Apartment Address</span>
+            <input type="text" name="t3" placeholder="Enter your Address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Locality*</span>
+            <input type="text" name="t4" placeholder="Enter your Locality" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Date</span>
+            <input type="date" name="t5">
+          </div>
+          <div class="input-box">
+            <span class="details">Tell us your Medicine Requirements:</span>
+
+<textarea id="details" name="t6"
+          rows="4" cols="40">
+
+</textarea>
+</div>
+<div class="button">
+          <input type="submit" value="  Book  ">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

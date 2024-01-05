@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+     <script> 
+      
+      function validate(){
+          if( document.login.t1.value == "" ||
+        isNaN( document.login.t1.value) ||
+        document.login.t1.value.length != 10 )
+        {
+        alert( "Mobile No format is incorrect." );
+        document.login.t1.focus() ;
+
+        return false;
+        }
+          if( document.login.t1.value == "" || document.login.t2.value=="")
+         
+        {
+        alert( "Please provide id and password" );
+        document.login.t1.focus() ;
+        
+        return false;
+        }
+      return true;
+        }
+        
+      </script>
+  <meta charset="UTF-8">
+  <title>Login Credentials</title>
+  <link rel="stylesheet" href="style7.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <div class="main_div">
+    <div class="title">Login Form</div>
+   
+    <form name="login" action="login" method="post" onsubmit="return validate();">
+      <div class="input_box">
+        <input type="text" name="t1" placeholder="Phone" required>
+        <div class="icon"><i class="fas fa-phone"></i></div>
+      </div>
+      <div class="input_box">
+        <input id="password" name="t2" type="password" placeholder="Password" required>
+        <span><i class="fa fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i></span>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+    
+      <div class="input_box button">
+         <input type="submit" value="Login" >
+      </div>
+      <div class="sign_up">
+          Not a member? <a href="signup.html">Register now</a><br>
+        <a href="forgot.html">Forgot Password</a>
+      </div>
+    </form>
+  </div>
+  <script>
+    var state = false;
+    function toggle() {
+      if (state) {
+        document.getElementById("password").setAttribute("type", "password");
+        document.getElementById("eye").style.color = '#000000';
+        state = false;
+      }
+      else {
+        document.getElementById("password").setAttribute("type", "text");
+        document.getElementById("eye").style.color = '#1ED760';
+        state = true;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

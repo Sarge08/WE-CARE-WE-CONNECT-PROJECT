@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+body {
+  font-family: "Lexend Exa", sans-serif;
+}
+.banner{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(assets/images/admin.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  position: absolute;
+  background-color: #ebecf1;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  border: 2px solid #ebecf1;
+  border-radius: 30px;
+  animation: slide-in 1s ease-out;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0 30px;
+  list-style-type: none;
+}
+ul li:not(:last-child) {
+  margin-right: 40px;
+}
+ul li {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  transition:ease-in 0.2s;
+}
+ul li a {
+  color: #9b59b6;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  font-size: initial;
+  font-weight: bold;
+}
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  display: block;
+  margin: 12px -12px;
+  padding: 0;
+  background: #0484CC;
+  border: 2px solid #0484CC;
+  border-right: 2px solid #0484CC;
+  border-bottom: 2px solid #0484CC;
+  border-radius: 5px;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+ul li ul li {
+  margin: -2px 0 0 -2px;
+  width: calc(100% - 20px);
+  line-height: 1.7;
+}
+ul li ul li a {
+  color: #2375d8;
+}
+ul li:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  border: 2px solid linear-gradient(-135deg, #71b7e6, #9b59b6);
+  border-right: 2px solid linear-gradient(-135deg, #71b7e6, #9b59b6);
+  border-bottom: 2px solid linear-gradient(-135deg, #71b7e6, #9b59b6);
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+ul li:hover a {
+  color: #f9f8fd;
+}
+ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+ul li:hover ul li a {
+  color: #f9f8fd;
+}
+
+@keyframes slide-in {
+  0% {
+    top: -50px;
+  }
+  40% {
+    top: 20px;
+  }
+  70% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+     <script> 
+      
+      function validate(){
+          if( document.login.t1.value == "" ||
+        isNaN( document.login.t1.value) ||
+        document.login.t1.value.length != 10 )
+        {
+        alert( "Mobile No format is incorrect." );
+        document.login.t1.focus() ;
+
+        return false;
+        }
+           if(document.sign.t6.value!=document.sign.t7.value || document.sign.t6.value.length !=8)
+        {
+        alert("New Password and Confirm Password should be same and must be 8 characters! Re-enter confirm-password!");
+        document.sign.t7.value="";
+        return false;
+        }
+      return true;
+        }
+        
+      </script>
+  <meta charset="UTF-8">
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="style7.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <div class="main_div">
+    <div class="title">Forgot Password</div>
+   
+    <form name="forgot" action="forgot" method="post" onsubmit="return validate();">
+      <div class="input_box">
+        <input type="text" name="t1" placeholder="Phone" required>
+        <div class="icon"><i class="fas fa-phone"></i></div>
+      </div>
+      <div class="input_box">
+        <input id="password" name="t2" type="password" placeholder="Enter new password" required>
+        <span><i class="fa fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i></span>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+        <div class="input_box">
+        <input id="password" name="t3" type="password" placeholder="Re-enter new password" required>
+        <span><i class="fa fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i></span>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+    
+      <div class="input_box button">
+          <input type="submit" value="Update" name="t4" >
+      </div>
+      
+    </form>
+  </div>
+  <script>
+    var state = false;
+    function toggle() {
+      if (state) {
+        document.getElementById("password").setAttribute("type", "password");
+        document.getElementById("eye").style.color = '#000000';
+        state = false;
+      }
+      else {
+        document.getElementById("password").setAttribute("type", "text");
+        document.getElementById("eye").style.color = '#1ED760';
+        state = true;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
